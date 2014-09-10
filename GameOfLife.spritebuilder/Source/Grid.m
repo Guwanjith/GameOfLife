@@ -87,17 +87,7 @@ static const int GRID_COLUMNS = 10;
     return _gridArray[row][column];
 }
 
--(void)evolveStep
-{
-    //update each Creature's neighbor count
-    [self countNeigbors];
-    
-    //update each creature's state
-    [self updateCreatures];
-    
-    //update the generation so that the label's text displays correct generation info
-    _generation++;
-}
+
 
 -(void)countNeighbors
 {
@@ -139,6 +129,18 @@ static const int GRID_COLUMNS = 10;
             }
         }
     }
+}
+
+-(void)evolveStep
+{
+    //update each Creature's neighbor count
+    [self countNeighbors];
+    
+    //update each creature's state
+    [self updateCreatures];
+    
+    //update the generation so that the label's text displays correct generation info
+    _generation++;
 }
 
 - (BOOL)isIndexValidForX:(int)x andY:(int)y
